@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUDAN ESPORTS | FULL STRATEGY 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+        --neon-primary: #00f2ff; /* التيل المضيء */
+        --neon-secondary: #00a8b3; /* تيل أغمق للظلال */
+        --bg-black: #050510;
+        --card-bg: rgba(0, 20, 30, 0.85); /* خلفية مائلة للأزرق الداكن */
+        --border-primary: rgba(0, 242, 255, 0.4);
+        --font-cyber: 'Orbitron', sans-serif;
+        --font-main: 'Cairo', sans-serif;
+    }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; scrollbar-width: thin; scrollbar-color: var(--neon-primary) transparent; }
+        body { background-color: var(--bg-black); color: #ffffff; font-family: var(--font-main); overflow: hidden; height: 100vh; }
+
+        /* الخلفية المتحركة */
+        .cyber-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, #1a0033 0%, #050510 100%); z-index: -2; }
+        .grid-layers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(var(--border-primary) 1px, transparent 1px), linear-gradient(90deg, var(--border-primary) 1px, transparent 1px); background-size: 50px 50px; z-index: -1; opacity: 0.15; transform: perspective(500px) rotateX(60deg); animation: gridScroll 20s linear infinite; }
+        @keyframes gridScroll { from { background-position: 0 0; } to { background-position: 0 400px; } }
+
+        /* حاوية الشرائح */
+        .presentation { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; }
+        .slide { width: 100%; max-width: 1550px; height: 90vh; background: var(--card-bg); border: 2px solid var(--neon-primary); backdrop-filter: blur(20px); position: relative; display: none; flex-direction: column; padding: 45px; box-shadow: 0 0 50px rgba(0, 242, 255, 0.2); clip-path: polygon(0 30px, 30px 0, calc(100% - 50px) 0, 100% 50px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 50px)); }
+        .slide.active { display: flex; animation: slideReveal 0.4s ease-out; }
+        @keyframes slideReveal { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+
+        .slide-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--neon-secondary); margin-bottom: 25px; padding-bottom: 15px; }
+        .slide-title { font-family: var(--font-cyber); font-size: 32px; color: #fff; text-shadow: 0 0 15px var(--neon-primary); }
+
+        .content-body { flex: 1; overflow-y: auto; padding-right: 20px; font-size: 22px; line-height: 1.6; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; }
+
+        /* البطاقات والمحتوى */
+        .cyber-card { background: rgba(188, 19, 254, 0.08); border: 1px solid rgba(188, 19, 254, 0.3); border-right: 10px solid var(--neon-secondary); padding: 25px; margin-bottom: 20px; }
+        .cyber-card h3 { color: var(--neon-primary); margin-bottom: 15px; font-family: var(--font-cyber); font-size: 26px; }
+        .cyber-card ul { margin-right: 25px; list-style-type: square; }
+        .cyber-card li { margin-bottom: 8px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: rgba(0,0,0,0.4); font-size: 20px; }
+        th { background: var(--neon-primary); color: rgb(0, 0, 0); padding: 15px; text-align: right; font-family: var(--font-cyber); }
+        td { padding: 15px; border-bottom: 1px solid var(--border-primary); color: #e0f0ff; }
+
+        .visual-frame { border: 2px solid var(--neon-primary); background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; }
+        .visual-frame img { width: 100%; height: auto; }
+
+        /* التحكم */
+        .nav-controls { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; z-index: 1000; }
+        .btn-cyber { background: transparent; border: 2px solid var(--neon-primary); color: var(--neon-primary); padding: 12px 40px; font-family: var(--font-cyber); font-weight: bold; cursor: pointer; transition: 0.3s; clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%); }
+        .btn-cyber:hover:not(:disabled) { background: var(--neon-primary); color: white; box-shadow: 0 0 25px var(--neon-primary); }
+        .page-info { position: absolute; bottom: 35px; right: 50px; font-family: var(--font-cyber); color: var(--neon-primary); font-size: 18px; }
+    </style>
+</head>
+<body>
+
+<div class="cyber-bg"></div>
+<div class="grid-layers"></div>
+
+<div class="presentation">
+
+    <div class="slide active" id="slide1" style="justify-content:center; text-align:center;">
+        <h1 style="font-size: 90px; font-family: var(--font-cyber); color: var(--neon-primary); filter: drop-shadow(0 0 20px var(--neon-primary)); line-height: 1;">SUDAN<br>ESPORTS</h1>
+        <p style="font-family: var(--font-cyber); color: var(--neon-secondary); letter-spacing: 10px; font-size: 24px; margin-top: 20px;">CORE_PROTOCOL_2026</p>
+        <div style="max-width: 800px; margin: 40px auto; border-top: 2px solid var(--neon-primary); padding-top: 30px;">
+            <p style="font-size: 24px;">تعريف شامل بالرياضات الإلكترونية ورؤية الاتحاد السوداني الاستراتيجية</p>
+        </div>
+    </div>
+
+    <div class="slide" id="slide2">
+        <div class="slide-header"><div class="slide-title">01 // ما هي الألعاب الإلكترونية؟</div></div>
+        <div class="content-body grid-2">
+            <div>
+                <div class="cyber-card">
+                    <h3>التعريف والمنصات</h3>
+                    <p>نشاط رقمي تفاعلي يصنع عوالم أو تحديات افتراضية يمكن التفاعل معها عبر: (الحواسيب، الكونسول، الهواتف، الأجهزة اللوحية، أو المنصات السحابية).</p>
+                </div>
+                <div class="cyber-card">
+                    <h3>الآلية والتصنيف</h3>
+                    <p>تعتمد على قواعد وأهداف (قصة، تحدي، منافسة). تشمل الأكشن، الاستراتيجية، المحاكاة، والرياضة، والألغاز.</p>
+                </div>
+                <div class="cyber-card" style="border-right-color: var(--neon-primary);">
+                    <p><strong>الأهداف:</strong> تتنوع بين الترفيه، التعلم، والتنافس الاحترافي.</p>
+                </div>
+            </div>
+            <div class="visual-frame">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=600" alt="Gaming Platforms">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide3">
+        <div class="slide-header"><div class="slide-title">02 // ما هي الرياضات الإلكترونية (ESPORTS)؟</div></div>
+        <div class="content-body">
+            <div class="cyber-card">
+                <h3>التعريف الاحترافي</h3>
+                <p>شكل تنافسي احترافي للألعاب متعددة اللاعبين، حيث يتنافس أفراد أو فرق في مسابقات منظمة (Online/LAN) ضمن قواعد صارمة مقابل جوائز نقدية وشهرة عالمية.</p>
+            </div>
+            <div class="grid-2">
+                <div class="cyber-card">
+                    <h3>متطلبات النخبة</h3>
+                    <ul>
+                        <li>سرعة رد فعل فائقة وتفكير استراتيجي.</li>
+                        <li>تدريب مكثف (6-8 ساعات يومياً).</li>
+                        <li>الانضباط والعمل الجماعي الاحترافي.</li>
+                    </ul>
+                </div>
+                <div class="cyber-card">
+                    <h3>المكانة الدولية</h3>
+                    <p>اعترفت بها <strong>اللجنة الأولمبية الدولية</strong> كمجال رياضي حديث، وتعتبر الآن صناعة تخلق ملايين الفرص الاقتصادية.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide4">
+        <div class="slide-header"><div class="slide-title">03 // لمحة تاريخية (HISTORY LOG)</div></div>
+        <div class="content-body">
+            <table >
+                <tr><th style="color: #000000;">السنة</th><th style="color: #000000;">الحدث</th><th style="color: #000000;" >التفاصيل</th></tr>
+                <tr><td>1972</td><td>البدايات</td><td>أول بطولة رسمية (Spacewar!) في معهد MIT.</td></tr>
+                <tr><td>1980s - 90s</td><td>التوسع</td><td>ظهور ألعاب القتال والاستراتيجية (Street Fighter, StarCraft).</td></tr>
+                <tr><td>2000s - الآن</td><td>العصر الذهبي</td><td>انفجار منصات البث (Twitch) ونمو السوق العربي والعالمي.</td></tr>
+            </table>
+            <div class="cyber-card" style="margin-top:30px;">
+                <h3>السودان والاتحاد الوطني (SESF)</h3>
+                <p>بإذن الله، سيتولى الاتحاد السوداني إدارة النشاطات لتعزيز المنافسة المحلية ووضع السودان على خارطة العالم الرقمي.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide5">
+        <div class="slide-header"><div class="slide-title">04 // الرؤية والمهمة الاستراتيجية</div></div>
+        <div class="content-body grid-2">
+            <div class="cyber-card">
+                <h3><i class="fa-solid fa-eye"></i> الرؤية</h3>
+                <p>جعل السودان لاعباً محورياً يربط بين السوق العربي المزدهر والسوق الأفريقي الصاعد عبر منظومة احترافية تتنافس عالمياً.</p>
+            </div>
+            <div class="cyber-card">
+                <h3><i class="fa-solid fa-bullseye"></i> المهمة</h3>
+                <p>تطوير المواهب، بناء بنية تحتية متطورة، استقطاب الرعاة، وخلق مسارات مهنية للشباب مع الالتزام بالقيم الاجتماعية والشرعية.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide6">
+        <div class="slide-header"><div class="slide-title">05 // الدور المحلي - البنية والتطوير</div></div>
+        <div class="content-body">
+            <div class="grid-2">
+                <div class="cyber-card">
+                    <h3>البنية التقنية</h3>
+                    <ul>
+                        <li>مجمعات تدريبية واستوديوهات بث احترافية.</li>
+                        <li>توفير خوادم محلية لتقليل زمن الاستجابة (Ping).</li>
+                        <li>تجهيز مساحات تدريب بأحدث التقنيات.</li>
+                    </ul>
+                </div>
+                <div class="cyber-card">
+                    <h3>الأكاديميات والتعليم</h3>
+                    <ul>
+                        <li>أكاديميات متخصصة (PUBG, FIFA, FC).</li>
+                        <li>دمج الرياضات الإلكترونية في النشاط الجامعي والمدرسي.</li>
+                        <li>مخيمات تدريب سنوية لانتقاء الناشئين.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide7">
+        <div class="slide-header"><div class="slide-title">06 // الدور المحلي - المجتمع والإدارة</div></div>
+        <div class="content-body">
+            <div class="grid-2">
+                <div class="cyber-card">
+                    <h3>المسؤولية والتوعية</h3>
+                    <p>حملات "اللعب الصحي"، ورش عمل للأهل حول السلامة الرقمية، وأخلاقيات التنافس الرياضي.</p>
+                </div>
+                <div class="cyber-card">
+                    <h3>إدارة المنتخبات</h3>
+                    <p>اختيار قائم على الأداء الصرف، برامج إعداد دولية، وتنسيق كامل للدعم اللوجستي والسفر.</p>
+                </div>
+            </div>
+            <div class="cyber-card" style="border-right-color: var(--neon-primary);">
+                <h3>الشراكات التجارية</h3>
+                <p>تعاون استراتيجي مع شركات الاتصالات والقطاع الخاص لتمويل الجوائز وبناء قاعدة استثمارية مستدامة.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide8">
+        <div class="slide-header"><div class="slide-title">07 // العلاقات الدولية والعضوية</div></div>
+        <div class="content-body grid-2">
+            <div>
+                <div class="cyber-card">
+                    <h3>المشاركات والعضويات</h3>
+                    <ul>
+                        <li>الانضمام للاتحادات الدولية والإفريقية (مثل IESF).</li>
+                        <li>توقيع مذكرات تفاهم لتبادل الخبرات والتدريب المشترك.</li>
+                    </ul>
+                </div>
+                <div class="cyber-card">
+                    <h3>الاستضافة</h3>
+                    <p>خطط مستقبلية لاستضافة بطولات إقليمية في السودان لتعزيز السياحة والتقنية.</p>
+                </div>
+            </div>
+            <div class="visual-frame">
+                <img src= "https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/9/2024/03/230807_Gamers8_002USE.jpg"  alt="Gaming Platforms">
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide9">
+        <div class="slide-header"><div class="slide-title">08 // الفرق الجوهري: Gaming vs Esports</div></div>
+        <div class="content-body">
+            <table>
+                <tr><th style="color: #000000;">وجه المقارنة</th><th style="color: #000000;">الألعاب (Gaming)</th><th style="color: #000000;">الرياضات (Esports)</th></tr>
+                <tr><td>الهدف</td><td>الترفيه والاستمتاع الشخصي بالقصة.</td><td>المنافسة، الفوز بالبطولات، وكسب المال.</td></tr>
+                <tr><td>البيئة</td><td>غير رسمية ومنزلية مريحة.</td><td>احترافية في ساحات LAN وتحت ضغط جماهيري.</td></tr>
+                <tr><td>القواعد</td><td>مرنة يحددها اللاعب للمتعة.</td><td>صارمة تخضع لقوانين الاتحادات ومكافحة الغش.</td></tr>
+                <tr><td>التدريب</td><td>عفوي ولا يتطلب جهداً ذهنياً عالياً.</td><td>تدريب يومي شاق (6+ ساعات) وعمل جماعي.</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="slide" id="slide10">
+        <div class="slide-header"><div class="slide-title">09 // المحافل والبطولات العالمية الكبرى</div></div>
+        <div class="content-body">
+            <div class="grid-2">
+                <div class="cyber-card">
+                    <h3>The International (Dota 2)</h3>
+                    <p>أكبر جوائز تاريخياً (تجاوزت 40 مليون دولار عام 2021).</p>
+                </div>
+                <div class="cyber-card">
+                    <h3>LoL Worlds</h3>
+                    <p>البطولة الأكثر مشاهدة عالمياً بملايين المتابعين سنوياً.</p>
+                </div>
+                <div class="cyber-card" style="border-right-color: var(--neon-primary);">
+                    <h3>Esports World Cup (الرياض)</h3>
+                    <p>أضخم حدث في المنطقة بجوائز تتجاوز 70 مليون دولار لعام 2025.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide11">
+        <div class="slide-header"><div class="slide-title">10 // اقتصاد الصناعة والنمو 2036</div></div>
+        <div class="content-body grid-2">
+            <div>
+                <div class="cyber-card">
+                    <h3>تحليل نمو السوق</h3>
+                    <ul>
+                        <li><strong>القيمة:</strong> توقع وصولها لـ 5.1 مليار $ في 2026، و 30 مليار $ بحلول 2036.</li>
+                        <li><strong>الجمهور:</strong> يتجاوز 640 مليون شخص، مع نمو سنوي مركب (CAGR) يصل لـ 21%.</li>
+                        <li><strong>مصادر الدخل:</strong> الرعايات، حقوق البث (Twitch/YT)، وبيع المنتجات الرقمية.</li>
+                    </ul>
+                </div>
+                <div class="cyber-card">
+                    <h3>الريادة العربية</h3>
+                    <p>السعودية تقود المنطقة باستثمارات 38 مليار دولار، مما يحفز النمو في مصر والسودان ودول الخليج.</p>
+                </div>
+            </div>
+            <div class="visual-frame">
+                <h2 style="font-size: 60px; color: var(--neon-primary); font-family: var(--font-cyber);">$30B+</h2>
+                <img src="https://media.istockphoto.com/id/2156211986/photo/2024-to-2025-business-financial-plan-market-concept-performance-of-profit-growth-on-2024.jpg?s=612x612&w=0&k=20&c=ufMClHzKkmQl2Fgs8wNngL_jntqksIi6bK7nIohmKVw=" alt="Gaming Platforms">
+                <div style="width:100%; height:10px; background:var(--neon-secondary); margin-top:20px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide12">
+        <div class="slide-header"><div class="slide-title">11 // المهن والوظائف في الرياضات الإلكترونية</div></div>
+        <div class="content-body">
+            <div class="grid-2">
+                <div class="cyber-card">
+                    <h3>المسارات التقنية والإبداعية</h3>
+                    <ul>
+                        <li><strong>مراقب المباراة (Observer):</strong> مخرج البث داخل اللعبة.</li>
+                        <li><strong>فني تقني وأمن سيبراني:</strong> حماية الخوادم والشبكات.</li>
+                        <li><strong>مصمم UI/UX:</strong> تصميم تجربة المشاهد واللاعب.</li>
+                        <li><strong>منشئ محتوى:</strong> بناء قاعدة جماهيرية رقمية.</li>
+                    </ul>
+                </div>
+                <div class="cyber-card">
+                    <h3>المسارات الإدارية والفنية</h3>
+                    <ul>
+                        <li><strong>لاعب محترف ومدرب:</strong> العمود الفقري للتنافس.</li>
+                        <li><strong>محلل أداء:</strong> دراسة الخصوم والاستراتيجيات.</li>
+                        <li><strong>معلق ومذيع (Caster):</strong> إدارة العرض الإعلامي.</li>
+                        <li><strong>مدير فريق ومنظم فعاليات:</strong> القيادة والتنظيم.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide13">
+        <div class="slide-header"><div class="slide-title">12 // نماذج ملهمة للسودان (CASE STUDIES)</div></div>
+        <div class="content-body grid-2">
+            <div style="display:flex; flex-direction:column; gap:15px;">
+                <div class="cyber-card">
+                    <h3>باكستان: عبقرية الموهبة الفردية</h3>
+                    <p>رغم ضعف البنية التحتية، ركزوا على ألعاب القتال (Tekken) وأنتجوا بطلاً عالمياً Arslan Ash، مما جذب الرعاة دولياً.</p>
+                </div>
+                <div class="cyber-card">
+                    <h3>كينيا ونيجيريا: ثورة الجوال</h3>
+                    <p>التركيز على Mobile Esports (PUBG Mobile) لبناء اقتصاد محلي وجذب شركات الاتصالات MTN و Airtel.</p>
+                </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+                <div class="cyber-card">
+                    <h3>السعودية: المركز العالمي</h3>
+                    <p>الاستثمار الضخم في الأكاديميات والاستوديوهات خلق آلاف الوظائف ورفع مساهمة الاقتصاد الرقمي.</p>
+                </div>
+                <div class="cyber-card" style="border-right-color: var(--neon-primary);">
+                    <h3>ليبيا: الإرادة التنظيمية</h3>
+                    <p>تأسيس اتحاد قوي نظم بطولات دولية ناجحة رغم التحديات، مما جعله نموذجاً للصمود العربي.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide14" style="justify-content:center; text-align:center;">
+        <h1 style="color:var(--neon-primary); font-family: var(--font-cyber); font-size: 70px;">SUDAN_2026</h1>
+        <div class="cyber-card" style="max-width: 900px; margin: 30px auto; border-left: none; border-right: 12px solid var(--neon-primary);">
+            <p style="font-size: 28px; font-weight: bold;">"السودان هو المحور الرابط بين السوق العربي المزدهر والسوق الأفريقي الصاعد."</p>
+        </div>
+        <p style="font-family: var(--font-cyber); color: var(--neon-secondary); letter-spacing: 5px;">SUDANESE ESPORTS FEDERATION // GAME_ON</p>
+    </div>
+
+    <div class="nav-controls">
+        <button class="btn-cyber" id="prevBtn" disabled>السابق</button>
+        <button class="btn-cyber" id="nextBtn">التالي</button>
+    </div>
+
+    <div class="page-info" id="pageNum">01 / 14</div>
+
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumIndicator = document.getElementById('pageNum');
+    let currentSlide = 0;
+
+    function updateSlide() {
+        slides.forEach((s, i) => {
+            s.classList.remove('active');
+            if(i === currentSlide) s.classList.add('active');
+        });
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.innerText = currentSlide === slides.length - 1 ? "إعادة العرض" : "التالي";
+        pageNumIndicator.innerText = `${String(currentSlide + 1).padStart(2, '0')} / ${slides.length}`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if(currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } 
+        else { currentSlide = 0; updateSlide(); }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if(currentSlide > 0) { currentSlide--; updateSlide(); }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if(e.key === "ArrowRight" || e.key === " ") nextBtn.click();
+        if(e.key === "ArrowLeft") prevBtn.click();
+    });
+</script>
+
+</body>
+</html>
